@@ -3,20 +3,28 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'api_response.freezed.dart';
 part 'api_response.g.dart';
 
-@freezed
-class PaginatedResponse<T> with _$PaginatedResponse<T> {
-  const factory PaginatedResponse({
-    required List<T> content,
-    required int total,
-    required int limit,
-    required int offset,
-  }) = _PaginatedResponse<T>;
+@JsonSerializable(genericArgumentFactories: true)
+class PaginatedResponse<T> {
+  final List<T> content;
+  final int total;
+  final int limit;
+  final int offset;
+
+  const PaginatedResponse({
+    required this.content,
+    required this.total,
+    required this.limit,
+    required this.offset,
+  });
 
   factory PaginatedResponse.fromJson(
     Map<String, dynamic> json,
-    T Function(Object?) fromJsonT,
+    T Function(Map<String, dynamic>) fromJsonT,
   ) =>
-      _$PaginatedResponseFromJson(json, fromJsonT);
+      _$PaginatedResponseFromJson(json, (e) => fromJsonT(e as Map<String, dynamic>));
+
+  Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
+      _$PaginatedResponseToJson(this, toJsonT);
 }
 
 @freezed

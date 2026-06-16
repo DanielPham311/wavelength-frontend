@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:just_audio/just_audio.dart';
+import 'package:just_audio/just_audio.dart' hide PlayerState;
 
+import '../../../catalog/domain/entities/song.dart';
 import '../../domain/player_state.dart';
 
 final audioPlayerProvider = Provider<AudioPlayer>((ref) {

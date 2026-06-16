@@ -1,6 +1,6 @@
 import '../../../../core/network/api_response.dart';
-import '../../catalog/domain/entities/artist.dart';
-import '../../catalog/domain/entities/song.dart';
+import '../../../catalog/domain/entities/artist.dart';
+import '../../../catalog/domain/entities/song.dart';
 import '../entities/play_history.dart';
 
 abstract class SocialRepository {

@@ -1,11 +1,7 @@
-import 'package:dio/dio.dart';
-
-import '../../../../core/errors/failures.dart';
 import '../../../../core/network/api_response.dart';
-import '../../../../core/utils/result.dart';
 import '../../../catalog/domain/entities/song.dart';
 import '../../domain/entities/playlist.dart';
-import '../../domain/repositories\library_repository.dart';
+import '../../domain/repositories/library_repository.dart';
 import '../datasources/library_remote_datasource.dart';
 
 class LibraryRepositoryImpl implements LibraryRepository {
