@@ -1,10 +1,7 @@
-import 'package:dio/dio.dart';
-
-import '../../../../core/errors/failures.dart';
 import '../../../../core/network/api_response.dart';
-import '../../../../core/utils/result.dart';
 import '../../domain/entities/album.dart';
 import '../../domain/entities/artist.dart';
+import '../../domain/entities/search_result.dart';
 import '../../domain/entities/song.dart';
 import '../../domain/repositories/catalog_repository.dart';
 import '../datasources/catalog_remote_datasource.dart';
